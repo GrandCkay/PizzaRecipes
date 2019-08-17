@@ -17,13 +17,14 @@ public class RecipeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_recipe);
 
         TextView title = findViewById(R.id.titleTextView);
+        ImageView pizzaImageViewRecipe = findViewById(R.id.pizzaImageView);
         TextView recipe = findViewById(R.id.recipeTextView);
 
         Intent intent = getIntent();
         if (intent != null) {
             title.setText(intent.getStringExtra("title"));
             recipe.setText(intent.getStringExtra("recipe"));
-
+            pizzaImageViewRecipe.setImageResource(intent.getIntExtra("imageResource", 0));
         }
     }
 }
